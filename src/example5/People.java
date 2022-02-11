@@ -31,7 +31,7 @@ record Person(FullName name, BirthDate dateOfBirth, EmailAddress email) {
 public class People {
     public static void main(String[] args) {
         var person = new Person(
-            new FullName("BruceEckel"),
+            new FullName("Bruce Eckel"),
             new BirthDate("7/8/1957"),
             new EmailAddress("mindviewinc@gmail.com")
         );
