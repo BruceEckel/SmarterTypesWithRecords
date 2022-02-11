@@ -3,26 +3,26 @@
 package example4;
 import check.Check;
 
-record OneToTen(int ott) {
-    OneToTen {
-        Check.validity(0 < ott && ott <= 10, ott + " out of range");
+record Stars(int n) {
+    Stars {
+        Check.validity(0 < n && n <= 10, n + " out of range");
     }
 }
 
 public class RecordValidation {
-    static OneToTen f1(OneToTen x) {
-        return new OneToTen(x.ott() * 10);
+    static Stars f1(Stars stars) {
+        return new Stars(stars.n() * 10);
     }
-    static OneToTen f2(OneToTen x) {
-        return new OneToTen(x.ott() + 10);
+    static Stars f2(Stars stars) {
+        return new Stars(stars.n() + 10);
     }
     public static void main(String[] args) {
-        var a = new OneToTen(6);
-        System.out.println(a);
-        System.out.println(f1(a));
-        System.out.println(f2(a));
-        var b = new OneToTen(11);
-        System.out.println(f1(b));
-        // a.ott = 99;  // Can 't modify ott
+        var stars1 = new Stars(6);
+        System.out.println(stars1);
+        System.out.println(f1(stars1));
+        System.out.println(f2(stars1));
+        var stars2 = new Stars(11);
+        System.out.println(f1(stars2));
+        // stars1.n = 99;  // Can 't modify n
     }
 }

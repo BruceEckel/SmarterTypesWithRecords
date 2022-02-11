@@ -2,35 +2,31 @@
 package example3;
 import check.Check;
 
-class OneToTen {
-    int ott;
-    OneToTen(int ott) {
-        this.ott = ott;
-        Check.validity(0 < ott && ott <= 10, ott + " out of range");
+class Stars {
+    final int n;
+    Stars(int n) {
+        this.n = n;
+        Check.validity(0 < n && n <= 10, n + " out of range");
     }
     @Override
     public String toString() {
-        return "OneToTen(" + ott + ")";
+        return "Stars(" + n + ")";
     }
 }
 
 public class ConstructorTypeValidation {
-    static OneToTen f1(OneToTen x) {
-        return new OneToTen(x.ott * 10);
+    static Stars f1(Stars stars) {
+        return new Stars(stars.n * 10);
     }
-    static OneToTen f2(OneToTen x) {
-        return new OneToTen(x.ott + 10);
+    static Stars f2(Stars stars) {
+        return new Stars(stars.n + 10);
     }
     public static void main(String[] args) {
-        var a = new OneToTen(6);
-        System.out.println(a);
-        System.out.println(f1(a));
-        System.out.println(f2(a));
-        var b = new OneToTen(11);
-        System.out.println(f1(b));
-        a.ott = 99;   // Can still mutate to an invalid OneToTen
-        System.out.println(a + ": Didn't detect that it's out of range!");
-        // So, still need to validate OneToTen inside functions
-        System.out.println(f2(a));
+        var stars1 = new Stars(6);
+        System.out.println(stars1);
+        System.out.println(f1(stars1));
+        System.out.println(f2(stars1));
+        var stars2 = new Stars(11);
+        System.out.println(f1(stars2));
     }
 }

@@ -27,7 +27,9 @@ public class DistributedTypeValidation {
         System.out.println(f2(stars1));
         var stars2 = new Stars(11);
         System.out.println(f1(stars2));
-        stars1.n = 99;
+        stars1.n = 99;   // Can still mutate to an invalid Stars
+        System.out.println(stars1 + ": Didn't detect that it's out of range!");
+        // So, still need to validate Stars inside functions
         System.out.println(f2(stars1));
     }
 }
