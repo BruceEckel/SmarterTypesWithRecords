@@ -1,4 +1,6 @@
 // Example 6: DateOfBirth.java
+package example6;
+import check.Check;
 
 record Day(int day) {
     Day {

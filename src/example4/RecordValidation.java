@@ -1,5 +1,7 @@
 // Example 4: RecordValidation.java
 // JDK 16 Records
+package example4;
+import check.Check;
 
 record OneToTen(int ott) {
     OneToTen {

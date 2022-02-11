@@ -1,4 +1,6 @@
 // Example 5: People.java
+package example5;
+import check.Check;
 
 record FullName(String name) {
     FullName {

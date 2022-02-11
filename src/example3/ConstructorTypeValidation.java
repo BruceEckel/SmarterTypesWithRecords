@@ -1,4 +1,6 @@
 // Example 3: ConstructorTypeValidation.java
+package example3;
+import check.Check;
 
 class OneToTen {
     int ott;
