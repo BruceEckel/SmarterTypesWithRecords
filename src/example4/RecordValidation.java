@@ -5,7 +5,7 @@ import check.Check;
 
 record Stars(int n) {
     Stars {
-        Check.validity(0 < n && n <= 10, n + " out of range");
+        Check.range(0 < n && n <= 10, n);
     }
 }
 

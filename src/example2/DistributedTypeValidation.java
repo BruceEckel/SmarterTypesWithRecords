@@ -13,11 +13,11 @@ class Stars {
 
 public class DistributedTypeValidation {
     static Stars f1(Stars stars) {
-        Check.validity(0 < stars.n && stars.n <= 10, stars.n + " out of range");
+        Check.range(0 < stars.n && stars.n <= 10, stars.n);
         return new Stars(stars.n * 10);
     }
     static Stars f2(Stars stars) {
-        Check.validity(0 < stars.n && stars.n <= 10, stars.n + " out of range");
+        Check.range(0 < stars.n && stars.n <= 10, stars.n);
         return new Stars(stars.n + 10);
     }
     public static void main(String[] args) {

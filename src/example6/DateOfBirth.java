@@ -4,19 +4,19 @@ import check.Check;
 
 record Day(int day) {
     Day {
-        Check.validity(0 < day && day <= 31, day + ": day of month out of range");
+        Check.range(0 < day && day <= 31, day + ": day of month");
     }
 }
 
 record Month(int month) {
     Month {
-        Check.validity(0 < month && month <= 12, month + ": month out of range");
+        Check.range(0 < month && month <= 12, "Month(" + month + ")");
     }
 }
 
 record Year(int year) {
     Year {
-        Check.validity(1900 < year && year <= 2022, year + ": year out of range");
+        Check.range(1900 < year && year <= 2022, "Year(" + year + ")");
     }
 }
 

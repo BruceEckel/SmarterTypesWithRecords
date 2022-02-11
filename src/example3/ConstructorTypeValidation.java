@@ -6,7 +6,7 @@ class Stars {
     final int n;
     Stars(int n) {
         this.n = n;
-        Check.validity(0 < n && n <= 10, n + " out of range");
+        Check.range(0 < n && n <= 10, n);
     }
     @Override
     public String toString() {

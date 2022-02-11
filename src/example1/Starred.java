@@ -4,11 +4,11 @@ import check.Check;
 
 public class Starred {
     static int f1(int stars) {
-        Check.validity(0 < stars && stars <= 10, stars + " out of range");
+        Check.range(0 < stars && stars <= 10, stars);
         return stars * 10;
     }
     static int f2(int stars) {
-        Check.validity(0 < stars && stars <= 10, stars + " out of range");
+        Check.range(0 < stars && stars <= 10, stars);
         return stars + 10;
     }
     public static void main(String[] args) {
