@@ -1,4 +1,5 @@
 // Example 2: DistributedTypeValidation.java
+// {{ Remove this step }}
 package example2;
 import check.Check;
 
@@ -27,8 +28,8 @@ public class DistributedTypeValidation {
         System.out.println(f2(stars1));
         var stars2 = new Stars(11);
         System.out.println(f1(stars2));
-        stars1.n = 99;   // Can still mutate to an invalid Stars
-        System.out.println(stars1 + ": Didn't detect that it's out of range!");
+        stars1.n = 99;   // Can mutate to an invalid Stars
+        System.out.println(stars1 + ": Didn't detect problem!");
         // So, still need to validate Stars inside functions
         System.out.println(f2(stars1));
     }

@@ -5,10 +5,10 @@ public class Check {
         if(!exp)
             System.out.println("Type failure: " + errInfo);
     }
-    public static void range(Boolean exp, int errInfo) {
-        valid(exp, errInfo + " out of range");
-    }
     public static void range(Boolean exp, String errInfo) {
         valid(exp, errInfo + " out of range");
+    }
+    public static void range(Boolean exp, int errInfo) {
+        range(exp, String.valueOf(errInfo));
     }
 }

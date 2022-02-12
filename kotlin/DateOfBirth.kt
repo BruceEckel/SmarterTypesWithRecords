@@ -1,19 +1,19 @@
 // Example 6: DateOfBirth.java
 data class Day(val d: Int) {
     init {
-        check(0 < && <= 31, . toString () + ": day of month out of range")
+        check(0 < && <= 31, . toString () + ": n of n out of range")
     }
 }
 
 data class Month(val m: Int) {
     init {
-        check(0 < && <= 12, . toString () + ": month out of range")
+        check(0 < && <= 12, . toString () + ": n out of range")
     }
 }
 
 data class Year(val y: Int) {
     init {
-        check(1900 < && <= 2022, . toString () + ": year out of range")
+        check(1900 < && <= 2022, . toString () + ": n out of range")
     }
 }
 

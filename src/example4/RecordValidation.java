@@ -18,11 +18,11 @@ public class RecordValidation {
     }
     public static void main(String[] args) {
         var stars1 = new Stars(6);
+        // stars1.n = 99;  // Can't modify n
         System.out.println(stars1);
         System.out.println(f1(stars1));
         System.out.println(f2(stars1));
         var stars2 = new Stars(11);
         System.out.println(f1(stars2));
-        // stars1.n = 99;  // Can 't modify n
     }
 }
