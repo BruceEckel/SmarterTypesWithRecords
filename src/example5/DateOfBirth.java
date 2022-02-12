@@ -1,5 +1,5 @@
-// Example 6: DateOfBirth.java
-package example6;
+// Example 5: DateOfBirth.java
+package example5;
 import util.Check;
 import static util.Show.show;
 
