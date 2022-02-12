@@ -1,5 +1,6 @@
-// Example 2: ConstructorTypeValidation.java
 package example2;
+// "A type is a set of values"
+// "Make illegal values unrepresentable"
 import util.Check;
 import static util.Show.show;
 

@@ -1,5 +1,5 @@
-// Example 5: DateOfBirth.java
 package example5;
+// For a type with a "small" set of values, use an enum
 import util.Check;
 import static util.Show.show;
 
@@ -50,22 +50,18 @@ record BirthDate(Month m, Day d, Year y) {
 }
 
 public class DateOfBirth {
-  record dob(int m, int d, int y) {
-    dob {
-      show(m + "/" + d + "/" + y);
-      show(new BirthDate(Month.number(m), new Day(d), new Year(y)));
-    }
+  static void test(int m, int d, int y) {
+    show(m + "/" + d + "/" + y);
+    show(new BirthDate(Month.number(m), new Day(d), new Year(y)));
   }
   public static void main(String[] args) {
-    dob[] dates = {
-        new dob(7, 8, 1957),
-        new dob(0, 32, 1857),
-        new dob(2, 31, 2022),
-        new dob(9, 31, 2022),
-        new dob(4, 31, 2022),
-        new dob(6, 31, 2022),
-        new dob(11, 31, 2022),
-        new dob(12, 31, 2022),
-    };
+    test(7, 8, 1957);
+    test(0, 32, 1857);
+    test(2, 31, 2022);
+    test(9, 31, 2022);
+    test(4, 31, 2022);
+    test(6, 31, 2022);
+    test(11, 31, 2022);
+    test(12, 31, 2022);
   }
 }

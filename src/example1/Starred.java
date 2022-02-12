@@ -1,5 +1,5 @@
-// Example 1: Starred.java
 package example1;
+// 1-10 stars for giving feedback
 import util.Check;
 import static util.Show.show;
 

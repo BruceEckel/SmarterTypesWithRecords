@@ -5,7 +5,8 @@ public class Check {
   public static boolean valid(Boolean exp, String errInfo) {
     if (!exp) {
       show("Type failure: " + errInfo);
-      return false;
+      return false; // Should actually throw an exception
+      // But this allows us to see everything in the examples
     }
     return true;
   }

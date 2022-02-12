@@ -1,7 +1,7 @@
-// Example 3: RecordValidation.java
-// JDK 16 Records
 package example3;
+// JDK 16 Records
 import util.Check;
+import java.util.HashMap;
 import static util.Show.show;
 
 record Stars(int n) {
@@ -25,5 +25,11 @@ public class RecordValidation {
     show(f2(stars1));
     var stars2 = new Stars(11);
     show(f1(stars2));
+    // Records can be keys in hashed data structures,
+    // because they define equals() and hashCode():
+    var m = new HashMap<Stars, String>();
+    m.put(stars1, "stars1");
+    m.put(stars2, "stars2");
+    show(m);
   }
 }
