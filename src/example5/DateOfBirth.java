@@ -23,17 +23,17 @@ enum Month {
   OCTOBER(31),
   NOVEMBER(30),
   DECEMBER(31);
-  final int max_days;
-  Month(int max_days) {
-    this.max_days = max_days;
+  final int maxDays;
+  Month(int maxDays) {
+    this.maxDays = maxDays;
   }
   public static Month number(int n) {
     if (Check.range(1 <= n && n <= 12, "Month.number(" + n + ")"))
       return values()[n];
     return NONE;
   }
-  void check_day(Day day) {
-    Check.range(day.n() <= max_days, "Month(" + this + ") " + day);
+  void checkDay(Day day) {
+    Check.range(day.n() <= maxDays, "Month(" + this + ") " + day);
   }
 }
 
@@ -45,7 +45,7 @@ record Year(int n) {
 
 record BirthDate(Month m, Day d, Year y) {
   BirthDate {
-    m.check_day(d);
+    m.checkDay(d);
   }
 }
 
