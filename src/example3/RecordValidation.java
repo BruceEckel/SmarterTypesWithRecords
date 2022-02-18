@@ -1,5 +1,7 @@
 package example3;
 // JDK 16 Records
+// "A type is a set of values"
+// "Make illegal values unrepresentable"
 import util.Check;
 import java.util.HashMap;
 import static util.Show.show;
