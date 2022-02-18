@@ -1,4 +1,5 @@
-package encapsulation;
+package example2;
+// Encapsulation with pre- and post-condition checks
 import util.Check;
 import static util.Show.show;
 
@@ -23,8 +24,7 @@ class Stars {
     condition(stars); // Postcondition
     return this;
   }
-  @Override
-  public String toString() {
+  @Override public String toString() {
     return "Stars(" + n + ")";
   }
 }
@@ -39,3 +39,4 @@ public class Encapsulation {
     show(stars2.f1(3));
   }
 }
+
