@@ -1,5 +1,7 @@
 package example5;
-// For a type with a "small" set of values, use an enum
+// An enum is also a type, and is preferable
+// when you have a smaller set of values.
+// "Leap years are left as an exercise."
 import util.Check;
 import static util.Show.show;
 
@@ -10,7 +12,6 @@ record Day(int n) {
 }
 
 enum Month {
-  NONE(0),  // Only needed for this example
   JANUARY(31),
   FEBRUARY(28),
   MARCH(31),
@@ -22,14 +23,15 @@ enum Month {
   SEPTEMBER(30),
   OCTOBER(31),
   NOVEMBER(30),
-  DECEMBER(31);
+  DECEMBER(31),
+  NONE(0);  // Only needed for this example
   final int maxDays;
   Month(int maxDays) {
     this.maxDays = maxDays;
   }
   public static Month number(int n) {
     if (Check.range(1 <= n && n <= 12, "Month.number(" + n + ")"))
-      return values()[n];
+      return values()[n - 1];
     return NONE;
   }
   void checkDay(Day day) {
@@ -63,5 +65,6 @@ public class DateOfBirth {
     test(6, 31, 2022);
     test(11, 31, 2022);
     test(12, 31, 2022);
+    test(13, 31, 2022);
   }
 }
