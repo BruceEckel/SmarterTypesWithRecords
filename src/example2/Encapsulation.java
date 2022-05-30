@@ -1,5 +1,6 @@
-package example2;
+// example2/Encapsulation.java
 // Encapsulation with pre- and post-condition checks
+package example2;
 import util.Check;
 import static util.Show.show;
 
@@ -39,4 +40,12 @@ public class Encapsulation {
     show(stars2.f1(3));
   }
 }
-
+/*
+Stars(6)
+Type failure: 40 out of range
+Stars(40)
+Stars(16)
+Type failure: 11 out of range
+Type failure: 30 out of range
+Stars(30)
+ */
