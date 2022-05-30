@@ -1,7 +1,8 @@
-package example3;
+// example3/RecordValidation.java
 // JDK 16 Records
 // "A type is a set of values"
 // "Make illegal values unrepresentable"
+package example3;
 import util.Check;
 import java.util.HashMap;
 import static util.Show.show;
