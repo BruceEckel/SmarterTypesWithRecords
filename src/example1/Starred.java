@@ -1,5 +1,6 @@
-package example1;
+// example1/Starred.java
 // 1-10 stars for giving feedback
+package example1;
 import util.Check;
 import static util.Show.show;
 
@@ -23,3 +24,12 @@ public class Starred {
     show(f2(stars1));
   }
 }
+/*
+6
+60
+16
+Type failure: 11 out of range
+110
+Type failure: 99 out of range
+109
+ */
