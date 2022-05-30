@@ -1,4 +1,5 @@
 package example5;
+// "A type is a set of values"
 // An enum is also a type, and is preferable
 // when you have a smaller set of values.
 // "Leap years are left as an exercise."

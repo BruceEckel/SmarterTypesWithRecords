@@ -7,11 +7,11 @@ import static util.Show.show;
 public class Starred {
   static int f1(int stars) {
     Check.range(0 < stars && stars <= 10, stars);
-    return stars * 10;
+    return stars * 2;
   }
   static int f2(int stars) {
     Check.range(0 < stars && stars <= 10, stars);
-    return stars + 10;
+    return stars + 4;
   }
   public static void main(String[] args) {
     int stars1 = 6;
@@ -26,10 +26,10 @@ public class Starred {
 }
 /*
 6
-60
-16
+12
+10
 Type failure: 11 out of range
-110
+22
 Type failure: 99 out of range
-109
+103
  */

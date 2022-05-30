@@ -6,24 +6,25 @@ import static util.Show.show;
 
 class Stars {
   private int n;
-  static void condition(int s) {
+  static void validate(int s) {
     Check.range(0 < s && s <= 10, s);
   }
   Stars(int n) {
-    condition(n); // Precondition
+    validate(n);
     this.n = n;
   }
-  Stars f1(int stars) {
-    condition(stars); // Precondition
-    n = stars * 10;
-    condition(n); // Postcondition
+  Stars f1(Stars stars) {
+    n = stars.n * 2;
+    validate(n);
     return this;
   }
-  Stars f2(int stars) {
-    condition(stars); // Precondition
-    n = stars + 10;
-    condition(stars); // Postcondition
+  Stars f2(Stars stars) {
+    n = stars.n + 4;
+    validate(n);
     return this;
+  }
+  static Stars f3(Stars s1, Stars s2) {
+    return new Stars(s1.n + s2.n);
   }
   @Override public String toString() {
     return "Stars(" + n + ")";
@@ -32,20 +33,25 @@ class Stars {
 
 public class Encapsulation {
   public static void main(String[] args) {
-    var stars1 = new Stars(6);
-    show(stars1);
-    show(stars1.f1(4));
-    show(stars1.f2(6));
-    var stars2 = new Stars(11);
-    show(stars2.f1(3));
+    Stars[] s = {
+      new Stars(1), new Stars(3),
+      new Stars(4), new Stars(6),
+      new Stars(11),
+    };
+    show(Stars.f3(s[1], s[3]));
+    var s1 = s[1];
+    show(s1);
+    show(s1.f1(s[2]));
+    show(s1.f2(s[3]));
+    show(s1.f2(s1));
   }
 }
 /*
-Stars(6)
-Type failure: 40 out of range
-Stars(40)
-Stars(16)
 Type failure: 11 out of range
-Type failure: 30 out of range
-Stars(30)
+Stars(9)
+Stars(3)
+Stars(8)
+Stars(10)
+Type failure: 14 out of range
+Stars(14)
  */
