@@ -23,9 +23,9 @@ public class RecordValidation {
   }
   public static void main(String[] args) {
     Stars[] s = {
-        new Stars(1), new Stars(3),
-        new Stars(4), new Stars(6),
-        new Stars(11),
+      new Stars(1), new Stars(3),
+      new Stars(4), new Stars(6),
+      new Stars(11),
     };
     show(s[1]);
     show(f1(s[1]));

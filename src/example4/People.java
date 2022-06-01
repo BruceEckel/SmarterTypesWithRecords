@@ -42,3 +42,12 @@ public class People {
     show(person);
   }
 }
+/*
+Checking FullName Bruce Eckel
+TODO: Check BirthDate 7/8/1957
+TODO: Check EmailAddress mindviewinc@gmail.com
+TODO: Check Person
+Person[name=FullName[name=Bruce Eckel],
+       dateOfBirth=BirthDate[dob=7/8/1957],
+       email=EmailAddress[address=mindviewinc@gmail.com]]
+ */
