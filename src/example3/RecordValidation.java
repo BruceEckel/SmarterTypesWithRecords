@@ -1,5 +1,5 @@
 // example3/RecordValidation.java
-// JDK 16 Records
+// Creating a type using JDK 16 records
 package example3;
 import java.util.HashMap;
 import util.Check;
@@ -43,3 +43,16 @@ public class RecordValidation {
     show(m);
   }
 }
+/*
+Type failure: 11 out of range
+Stars[n=3]
+Stars[n=6]
+Type failure: 12 out of range
+Stars[n=12]
+Stars[n=8]
+Stars[n=10]
+Stars[n=9]
+Type failure: 12 out of range
+Stars[n=12]
+{Stars[n=3]=one, Stars[n=4]=two}
+ */

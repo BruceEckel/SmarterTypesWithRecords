@@ -1,5 +1,6 @@
-package example4;
+// example4/People.java
 // Composing records using records
+package example4;
 import util.Check;
 import static util.Show.show;
 
