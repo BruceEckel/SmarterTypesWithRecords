@@ -6,11 +6,13 @@ import static util.Show.show;
 
 public class Starred {
   static int f1(int stars) {
-    Check.range(0 < stars && stars <= 10, stars);
+    Check.range(
+      0 < stars && stars <= 10, stars);
     return stars * 2;
   }
   static int f2(int stars) {
-    Check.range(0 < stars && stars <= 10, stars);
+    Check.range(
+      0 < stars && stars <= 10, stars);
     return stars + 4;
   }
   public static void main(String[] args) {

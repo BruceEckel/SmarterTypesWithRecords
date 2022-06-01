@@ -2,15 +2,20 @@ package util;
 import static util.Show.show;
 
 public class Check {
-  public static boolean valid(Boolean exp, String errInfo) {
+  public static boolean
+  valid(Boolean exp, String errInfo) {
     if (!exp) {
       show("Type failure: " + errInfo);
-      return false; // Should actually throw an exception
-      // But this allows us to see everything in the examples
+      return false;
+      // Should actually throw an
+      // exception, but this allows us
+      // to see everything in the examples.
     }
     return true;
   }
-  public static boolean range(Boolean exp, Object errInfo) {
-    return valid(exp, errInfo + " out of range");
+  public static boolean
+  range(Boolean exp, Object errInfo) {
+    return valid(exp,
+      errInfo + " out of range");
   }
 }

@@ -1,14 +1,15 @@
-package example5;
-// "A type is a set of values"
+// example5/DateOfBirth.java
 // An enum is also a type, and is preferable
 // when you have a smaller set of values.
 // "Leap years are left as an exercise."
+package example5;
 import util.Check;
 import static util.Show.show;
 
 record Day(int n) {
   Day {
-    Check.range(0 < n && n <= 31, "Day(" + n + ")");
+    Check.range(0 < n && n <= 31,
+      "Day(" + n + ")");
   }
 }
 
@@ -25,24 +26,28 @@ enum Month {
   OCTOBER(31),
   NOVEMBER(30),
   DECEMBER(31),
-  NONE(0);  // Only needed for this example
+  // Only needed for this example:
+  NONE(0);
   final int maxDays;
   Month(int maxDays) {
     this.maxDays = maxDays;
   }
   public static Month number(int n) {
-    if (Check.range(1 <= n && n <= 12, "Month.number(" + n + ")"))
+    if (Check.range(1 <= n && n <= 12,
+        "Month.number(" + n + ")"))
       return values()[n - 1];
     return NONE;
   }
   void checkDay(Day day) {
-    Check.range(day.n() <= maxDays, "Month(" + this + ") " + day);
+    Check.range(day.n() <= maxDays,
+      "Month(" + this + ") " + day);
   }
 }
 
 record Year(int n) {
   Year {
-    Check.range(1900 < n && n <= 2022, "Year(" + n + ")");
+    Check.range(1900 < n && n <= 2022,
+      "Year(" + n + ")");
   }
 }
 
@@ -55,7 +60,9 @@ record BirthDate(Month m, Day d, Year y) {
 public class DateOfBirth {
   static void test(int m, int d, int y) {
     show(m + "/" + d + "/" + y);
-    show(new BirthDate(Month.number(m), new Day(d), new Year(y)));
+    show(new BirthDate(
+      Month.number(m), new Day(d), new Year(y)
+    ));
   }
   public static void main(String[] args) {
     test(7, 8, 1957);
@@ -69,3 +76,34 @@ public class DateOfBirth {
     test(13, 31, 2022);
   }
 }
+/*
+7/8/1957
+BirthDate[m=JULY, d=Day[n=8], y=Year[n=1957]]
+0/32/1857
+Type failure: Month.number(0) out of range
+Type failure: Day(32) out of range
+Type failure: Year(1857) out of range
+Type failure: Month(NONE) Day[n=32] out of range
+BirthDate[m=NONE, d=Day[n=32], y=Year[n=1857]]
+2/31/2022
+Type failure: Month(FEBRUARY) Day[n=31] out of range
+BirthDate[m=FEBRUARY, d=Day[n=31], y=Year[n=2022]]
+9/31/2022
+Type failure: Month(SEPTEMBER) Day[n=31] out of range
+BirthDate[m=SEPTEMBER, d=Day[n=31], y=Year[n=2022]]
+4/31/2022
+Type failure: Month(APRIL) Day[n=31] out of range
+BirthDate[m=APRIL, d=Day[n=31], y=Year[n=2022]]
+6/31/2022
+Type failure: Month(JUNE) Day[n=31] out of range
+BirthDate[m=JUNE, d=Day[n=31], y=Year[n=2022]]
+11/31/2022
+Type failure: Month(NOVEMBER) Day[n=31] out of range
+BirthDate[m=NOVEMBER, d=Day[n=31], y=Year[n=2022]]
+12/31/2022
+BirthDate[m=DECEMBER, d=Day[n=31], y=Year[n=2022]]
+13/31/2022
+Type failure: Month.number(13) out of range
+Type failure: Month(NONE) Day[n=31] out of range
+BirthDate[m=NONE, d=Day[n=31], y=Year[n=2022]]
+ */

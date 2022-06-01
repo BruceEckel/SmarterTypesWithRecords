@@ -1,5 +1,5 @@
 // example2/Encapsulation.java
-// Encapsulation with pre- and post-condition checks
+// Encapsulation with validation checks
 package example2;
 import util.Check;
 import static util.Show.show;

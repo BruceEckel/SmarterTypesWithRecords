@@ -8,7 +8,7 @@ record FullName(String name) {
   FullName {
     show("Checking FullName " + name);
     Check.valid(name.split(" ").length > 1,
-      name + " needs at least first and last names");
+      name + " needs first and last names");
   }
 }
 
@@ -47,7 +47,9 @@ Checking FullName Bruce Eckel
 TODO: Check BirthDate 7/8/1957
 TODO: Check EmailAddress mindviewinc@gmail.com
 TODO: Check Person
-Person[name=FullName[name=Bruce Eckel],
-       dateOfBirth=BirthDate[dob=7/8/1957],
-       email=EmailAddress[address=mindviewinc@gmail.com]]
+Person[
+  name=FullName[name=Bruce Eckel],
+  dateOfBirth=BirthDate[dob=7/8/1957],
+  email=EmailAddress[address=mindviewinc@gmail.com]
+]
  */

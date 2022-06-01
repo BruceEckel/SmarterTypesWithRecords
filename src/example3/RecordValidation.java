@@ -35,8 +35,9 @@ public class RecordValidation {
     show(f3(s[1], s[3]));
     show(f3(s[3], s[3]));
 
-    // Records can be keys in hashed data structures,
-    // because they define equals() and hashCode():
+    // Records can be keys in hashed data
+    // structures because they define
+    // equals() and hashCode():
     var m = new HashMap<Stars, String>();
     m.put(s[1], "one");
     m.put(s[2], "two");
