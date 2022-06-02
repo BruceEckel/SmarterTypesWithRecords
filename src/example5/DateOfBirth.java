@@ -8,8 +8,7 @@ import static util.Show.show;
 
 record Day(int n) {
   Day {
-    Check.range(0 < n && n <= 31,
-      "Day(" + n + ")");
+    Check.range(0 < n && n <= 31, this);
   }
 }
 
@@ -40,14 +39,13 @@ enum Month {
   }
   void checkDay(Day day) {
     Check.range(day.n() <= maxDays,
-      "Month(" + this + ") " + day);
+      this + ": " + day);
   }
 }
 
 record Year(int n) {
   Year {
-    Check.range(1900 < n && n <= 2022,
-      "Year(" + n + ")");
+    Check.range(1900 < n && n <= 2022, this);
   }
 }
 
@@ -81,29 +79,29 @@ public class DateOfBirth {
 BirthDate[m=JULY, d=Day[n=8], y=Year[n=1957]]
 0/32/1857
 Type failure: Month.number(0) out of range
-Type failure: Day(32) out of range
-Type failure: Year(1857) out of range
-Type failure: Month(NONE) Day[n=32] out of range
+Type failure: Day[n=0] out of range
+Type failure: Year[n=0] out of range
+Type failure: NONE: Day[n=32] out of range
 BirthDate[m=NONE, d=Day[n=32], y=Year[n=1857]]
 2/31/2022
-Type failure: Month(FEBRUARY) Day[n=31] out of range
+Type failure: FEBRUARY: Day[n=31] out of range
 BirthDate[m=FEBRUARY, d=Day[n=31], y=Year[n=2022]]
 9/31/2022
-Type failure: Month(SEPTEMBER) Day[n=31] out of range
+Type failure: SEPTEMBER: Day[n=31] out of range
 BirthDate[m=SEPTEMBER, d=Day[n=31], y=Year[n=2022]]
 4/31/2022
-Type failure: Month(APRIL) Day[n=31] out of range
+Type failure: APRIL: Day[n=31] out of range
 BirthDate[m=APRIL, d=Day[n=31], y=Year[n=2022]]
 6/31/2022
-Type failure: Month(JUNE) Day[n=31] out of range
+Type failure: JUNE: Day[n=31] out of range
 BirthDate[m=JUNE, d=Day[n=31], y=Year[n=2022]]
 11/31/2022
-Type failure: Month(NOVEMBER) Day[n=31] out of range
+Type failure: NOVEMBER: Day[n=31] out of range
 BirthDate[m=NOVEMBER, d=Day[n=31], y=Year[n=2022]]
 12/31/2022
 BirthDate[m=DECEMBER, d=Day[n=31], y=Year[n=2022]]
 13/31/2022
 Type failure: Month.number(13) out of range
-Type failure: Month(NONE) Day[n=31] out of range
+Type failure: NONE: Day[n=31] out of range
 BirthDate[m=NONE, d=Day[n=31], y=Year[n=2022]]
- */
+*/
