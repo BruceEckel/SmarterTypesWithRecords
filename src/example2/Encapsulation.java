@@ -13,6 +13,7 @@ class Stars {
     validate(n);
     this.n = n;
   }
+  int n() { return n; }
   Stars f1(Stars stars) {
     n = stars.n * 2;
     validate(n);

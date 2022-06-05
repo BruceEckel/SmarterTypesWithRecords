@@ -1,3 +1,4 @@
+// util/Check.java
 package util;
 import static util.Show.show;
 
@@ -9,7 +10,7 @@ public class Check {
       return false;
       // Should actually throw an
       // exception, but this allows us
-      // to see everything in the examples.
+      // to see complete example output.
     }
     return true;
   }
