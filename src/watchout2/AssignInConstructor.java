@@ -8,7 +8,6 @@ record Stars(int n) {
     // Variable 'this.n' might not have been initialized
     n();
   }
-  @Override public int n() { return this.n; }
 }
 
 class Stars2 {
@@ -18,9 +17,17 @@ class Stars2 {
   }
 }
 
+record Stars3(int n) {
+  Stars3 {
+    n = 4;
+  }
+}
+
 public class AssignInConstructor {
   public static void main(String[] args) {
     System.out.println(new Stars(1));
     System.out.println(new Stars2(2));
+    var s3 = new Stars3(2);
+    System.out.println(s3);
   }
 }
