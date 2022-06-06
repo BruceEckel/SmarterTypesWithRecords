@@ -1,3 +1,4 @@
+// watchout/RecordConstructor.java
 package watchout;
 import static util.Show.show;
 
@@ -6,7 +7,8 @@ record Stars(int n) {
     show("In compact constructor:");
     show("n: " + n + ", n(): " + n());
     // show("this.n: " + this.n);
-    // Variable 'this.n' might not have been initialized
+    // Variable 'this.n' might not have
+    // been initialized
     x();
   }
   void x() {

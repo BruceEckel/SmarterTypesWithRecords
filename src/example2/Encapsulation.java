@@ -15,12 +15,12 @@ class Stars {
   }
   int n() { return n; }
   Stars f1(Stars stars) {
-    n = stars.n * 2;
+    n = n % 5 + stars.n * 2;
     validate(n);
     return this;
   }
   Stars f2(Stars stars) {
-    n = stars.n + 4;
+    n = n % 5 + stars.n + 2;
     validate(n);
     return this;
   }
@@ -36,7 +36,7 @@ public class Encapsulation {
   public static void main(String[] args) {
     Stars[] s = {
       new Stars(1), new Stars(3),
-      new Stars(4), new Stars(6),
+      new Stars(2), new Stars(6),
       new Stars(11),
     };
     show(Stars.f3(s[1], s[3]));
@@ -45,14 +45,18 @@ public class Encapsulation {
     show(s1.f1(s[2]));
     show(s1.f2(s[3]));
     show(s1.f2(s1));
+    show(s1.f2(s1));
   }
 }
 /*
 Type failure: 11 out of range
+Type failure: 11 out of range
 Stars(9)
 Stars(3)
-Stars(8)
+Stars(7)
 Stars(10)
-Type failure: 14 out of range
-Stars(14)
+Type failure: 12 out of range
+Stars(12)
+Type failure: 16 out of range
+Stars(16)
  */
