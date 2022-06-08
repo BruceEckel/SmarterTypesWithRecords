@@ -50,7 +50,6 @@ public class Encapsulation {
 }
 /*
 Type failure: 11 out of range
-Type failure: 11 out of range
 Stars(9)
 Stars(3)
 Stars(7)
@@ -59,4 +58,4 @@ Type failure: 12 out of range
 Stars(12)
 Type failure: 16 out of range
 Stars(16)
- */
+*/

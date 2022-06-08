@@ -56,4 +56,4 @@ Stars[n=9]
 Type failure: 12 out of range
 Stars[n=12]
 {Stars[n=3]=one, Stars[n=4]=two}
- */
+*/
