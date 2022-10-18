@@ -5,8 +5,9 @@ import java.util.HashMap;
 import util.Check;
 import static util.Show.show;
 
+// Defines constructor, getters, equals, hashCode, toString
 record Stars(int n) {
-  Stars {
+  Stars {  // "Compact" constructor for validation
     Check.range(0 < n && n <= 10, n);
   }
 }

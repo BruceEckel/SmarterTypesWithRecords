@@ -1,3 +1,4 @@
+// watchout2/AssignInConstructor.java
 package watchout2;
 
 record Stars(int n) {
@@ -18,9 +19,7 @@ class Stars2 {
 }
 
 record Stars3(int n) {
-  Stars3 {
-    n = 4;
-  }
+  Stars3 { n = 4; }
 }
 
 public class AssignInConstructor {

@@ -33,8 +33,9 @@ enum Month {
   }
   public static Month number(int n) {
     if (Check.range(1 <= n && n <= 12,
-        "Month.number(" + n + ")"))
+        "Month.number(" + n + ")")) {
       return values()[n - 1];
+    }
     return NONE;
   }
   void checkDay(Day day) {
