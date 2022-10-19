@@ -1,5 +1,5 @@
 // example5/DateOfBirth.java
-// An enum is also a type, and is preferable
+// An enum is also a type, and can be useful
 // when you have a smaller set of values.
 // "Leap years are left as an exercise."
 package example5;

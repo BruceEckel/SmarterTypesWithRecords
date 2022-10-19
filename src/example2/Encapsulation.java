@@ -34,28 +34,25 @@ class Stars {
 
 public class Encapsulation {
   public static void main(String[] args) {
-    Stars[] s = {
-      new Stars(1), new Stars(3),
-      new Stars(2), new Stars(6),
-      new Stars(11),
-    };
-    show(Stars.f3(s[1], s[3]));
-    var s1 = s[1];
-    show(s1);
-    show(s1.f1(s[2]));
-    show(s1.f2(s[3]));
-    show(s1.f2(s1));
-    show(s1.f2(s1));
+    var one = new Stars(1);
+    var two = new Stars(2);
+    var three = new Stars(3);
+    var eleven = new Stars(11);
+    show(Stars.f3(one, three));
+    show(one);
+    show(one.f1(two));
+    show(one.f2(three));
+    show(one.f2(one));
+    show(one.f2(one));
   }
 }
 /*
 Type failure: 11 out of range
-Stars(9)
-Stars(3)
+Stars(4)
+Stars(1)
+Stars(5)
+Stars(5)
 Stars(7)
-Stars(10)
-Type failure: 12 out of range
-Stars(12)
-Type failure: 16 out of range
-Stars(16)
+Type failure: 11 out of range
+Stars(11)
 */

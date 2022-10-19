@@ -23,38 +23,35 @@ public class RecordValidation {
     return new Stars(s1.n() + s2.n());
   }
   public static void main(String[] args) {
-    Stars[] s = {
-      new Stars(1), new Stars(3),
-      new Stars(4), new Stars(6),
-      new Stars(11),
-    };
-    show(s[1]);
-    show(f1(s[1]));
-    show(f1(s[3]));
-    show(f2(s[2]));
-    show(f2(s[3]));
-    show(f3(s[1], s[3]));
-    show(f3(s[3], s[3]));
+    var one = new Stars(1);
+    var two = new Stars(2);
+    var three = new Stars(3);
+    var eleven = new Stars(11);
+    show(one);
+    show(f1(one));
+    show(f1(three));
+    show(f2(two));
+    show(f2(three));
+    show(f3(one, three));
+    show(f3(three, three));
 
     // Records can be keys in hashed data
     // structures because they define
     // equals() and hashCode():
     var m = new HashMap<Stars, String>();
-    m.put(s[1], "one");
-    m.put(s[2], "two");
+    m.put(one, "one");
+    m.put(two, "two");
     show(m);
   }
 }
 /*
 Type failure: 11 out of range
-Stars[n=3]
+Stars[n=1]
+Stars[n=2]
 Stars[n=6]
-Type failure: 12 out of range
-Stars[n=12]
-Stars[n=8]
-Stars[n=10]
-Stars[n=9]
-Type failure: 12 out of range
-Stars[n=12]
-{Stars[n=3]=one, Stars[n=4]=two}
+Stars[n=6]
+Stars[n=7]
+Stars[n=4]
+Stars[n=6]
+{Stars[n=1]=one, Stars[n=2]=two}
 */

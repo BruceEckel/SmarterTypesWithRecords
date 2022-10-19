@@ -1,4 +1,5 @@
 // watchout/RecordConstructor.java
+// Possibly surprising behavior in compact constructor
 package watchout;
 import static util.Show.show;
 
